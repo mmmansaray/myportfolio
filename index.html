@@ -1,0 +1,262 @@
+<!-- Personal Portfolio Website -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Girly Rockstar Portfolio</title>
+  <style>
+    body {
+      background: #000 url('./glitter.gif') repeat;
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    /* MySpace-style container */
+    .myspace-container {
+      width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.92);
+      border: 3px double #e0b0ff;
+      border-radius: 18px;
+      box-shadow: 0 0 40px #e0b0ff99, 0 0 10px #fff;
+      padding: 30px 40px;
+      position: relative;
+    }
+    header {
+      background: transparent;
+      border: none;
+      text-align: left;
+      padding: 0 0 1rem 0;
+      position: relative;
+    }
+    .chrome-heart {
+      font-size: 2.5rem;
+      color: #bfbfbf;
+      letter-spacing: 0.2em;
+      font-family: 'Impact', fantasy;
+      text-shadow: 2px 2px 8px #e0b0ff, 0 0 10px #fff;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+    .hello-kitty {
+      font-size: 2.2rem;
+      color: #ff69b4;
+      font-family: 'Comic Sans MS', cursive;
+      text-shadow: 1px 1px 8px #fff, 0 0 10px #e0b0ff;
+      margin-left: 1rem;
+      vertical-align: middle;
+    }
+    .sparkle {
+      color: #fff;
+      text-shadow: 0 0 8px #ffb6e6, 0 0 16px #fff;
+      font-size: 1.5rem;
+      margin-left: 0.5rem;
+    }
+    .welcome {
+      margin: 1.5rem 0 1rem 0;
+      font-size: 2.2rem;
+      color: #e75480;
+      font-family: 'Comic Sans MS',cursive;
+      text-shadow: 1px 1px 10px #fff,0 0 10px #e0b0ff;
+      letter-spacing: 0.03em;
+      text-align: center;
+    }
+    nav {
+      margin: 1.5rem 0 2rem 0;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      background: #e75480;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      padding: 0.4rem 1.2rem;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 8px #e0b0ff99;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover {
+      background: #fff;
+      color: #e75480;
+      border: 2px solid #e75480;
+    }
+    section {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px #e0b0ff44;
+      padding: 2rem;
+      border: 2px solid #e0b0ff;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #e75480;
+      font-family: 'Comic Sans MS', cursive;
+      margin-top: 0;
+      letter-spacing: 0.05em;
+    }
+    .bio {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .bio img {
+      width: 100px;
+      border-radius: 50%;
+      border: 3px solid #e0b0ff;
+      box-shadow: 0 0 12px #ffb6e6;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1rem 0 0 0;
+    }
+    .skills-list span {
+      background: #ffe4fa;
+      color: #e75480;
+      border: 1.5px solid #e0b0ff;
+      border-radius: 12px;
+      padding: 0.4rem 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      box-shadow: 0 2px 8px #e0b0ff33;
+    }
+    .portfolio {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .project {
+      background: #fff;
+      border: 2px solid #e0b0ff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px #e0b0ff22;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .project:hover {
+      transform: scale(1.04) rotate(-2deg);
+      box-shadow: 0 6px 24px #e0b0ff66;
+    }
+    .project img {
+      width: 80px;
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 1000px) {
+      .myspace-container {
+        width: 98vw;
+        padding: 10px 2vw;
+      }
+    }
+    @media (max-width: 600px) {
+      .portfolio {
+        grid-template-columns: 1fr;
+      }
+      .bio {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    .marquee {
+      position: fixed;
+      top: 20px;
+      left: 0;
+      width: 100vw;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 2rem;
+      color: #ff69b4;
+      font-family: 'Comic Sans MS', cursive;
+      text-shadow: 2px 2px 8px #fff, 0 0 10px #e0b0ff;
+      animation: marquee 12s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(100vw); }
+      100% { transform: translateX(-100vw); }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee">
+    <span class="marquee-text">★ Welcome to my page ♥ &nbsp; ★ Welcome to my page ♥ &nbsp;</span>
+  </div>
+  <div class="myspace-container">
+    <header>
+      <span style="display:block; text-align:center; font-size:2.2rem; color:#ff69b4; font-family:'Comic Sans MS', cursive; text-shadow:1px 1px 8px #fff, 0 0 10px #e0b0ff; margin: 1rem auto 0 auto; vertical-align:middle;">Marienne Mansaray</span>
+      <div class="welcome">Welcome to my page</div>
+      <nav>
+        <a href="#bio">Bio</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+      </nav>
+    </header>
+
+    <div style="text-align:center; margin: 30px 0 10px 0;">
+      <audio id="rnb-music" src="rnb-music.mp3" controls loop style="width: 90%; max-width: 400px; background: #fff8fc; border-radius: 12px; box-shadow: 0 2px 8px #e0b0ff33;"></audio>
+      <div style="color:#e75480; font-size:1rem; margin-top:8px;">Now Playing: Your R&B Track</div>
+    </div>
+
+    <section id="bio">
+      <h2>About Me</h2>
+      <div class="bio">
+        <img src="https://pngimg.com/d/hello_kitty_PNG32.png" alt="Hello Kitty Avatar">
+        <div>
+          <p style="color:#ffb6e6;">Hi! I'm <b>Marienne Mansaray</b> — I'm studying public health at UNCG with dreams of being in the healthcare system. I'm a beginner web developer who is passionate about creativity, helping people out, and having fun. My favorite colors are royal blue and purple! Welcome to my portfolio! <span class="sparkle">✧</span></p>
+          <p style="margin-top:0.5rem; font-size:1rem; color:#e75480;">Email: <a href="mailto:mansaraymarienne4@gmail.com" style="color:#e75480; text-decoration:underline;">mansaraymarienne4@gmail.com</a></p>
+          <p style="margin-top:0.2rem; font-size:1rem; color:#e75480; display:flex; align-items:center; gap:8px;">
+            <a href="https://www.linkedin.com/in/marienne-mansaray-386b5b366" target="_blank" style="color:#e75480; text-decoration:underline; display:flex; align-items:center; gap:6px;">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" style="width:22px; height:22px; vertical-align:middle; filter: invert(69%) sepia(13%) saturate(7492%) hue-rotate(294deg) brightness(102%) contrast(101%);"> linkedin.com/in/marienne-mansaray-386b5b366
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Creativity</span>
+        <span>Design</span>
+        <span>Teamwork</span>
+        <span>Resilient</span>
+        <span>Compassionate</span>
+        <!-- Add more as you learn! -->
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio">
+        <div class="project">
+          <img src="https://pngimg.com/d/hello_kitty_PNG32.png" alt="Project 1">
+          <h3>Project Title 1</h3>
+          <p style="color:#ffb6e6;">This website was built from scratch using HTML and CSS, with creative help from GitHub Copilot! ✨ Explore the Y2K-inspired design and fun interactive features.</p>
+        </div>
+        <div class="project">
+          <img src="https://pngimg.com/d/hello_kitty_PNG31.png" alt="Project 2">
+          <h3>Project Title 2</h3>
+          <p style="color:#ffb6e6;">Another awesome project. Add your own soon!</p>
+        </div>
+        <!-- Add more projects as you go! -->
+      </div>
+    </section>
+
+    <footer style="text-align:center; margin:2rem 0; color:#e0b0ff; font-size:1.1rem;">
+      Made with <span style="color:#ff69b4;">♥</span> by Marienne Mansaray
+    </footer>
+  </div>
+</body>
+</html>
